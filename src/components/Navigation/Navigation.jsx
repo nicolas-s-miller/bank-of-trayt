@@ -1,13 +1,6 @@
-import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-
-const NavItem = ({ children }) => (
-  <Typography variant="subtitle1" component="div">
-    {children}
-  </Typography>
-);
+import NavigationItem from './NavigationItem';
 
 const Navigation = () => (
   <AppBar
@@ -20,11 +13,11 @@ const Navigation = () => (
     }}
   >
     <Toolbar sx={{ gap: "20px", justifyContent: "flex-end" }}>
-      <NavItem>Sign In</NavItem>
-      <NavItem>En Español</NavItem>
-      <NavItem>Locations</NavItem>
-      <NavItem>Contact Us</NavItem>
-      <NavItem>Help</NavItem>
+      <NavigationItem>Sign In</NavigationItem>
+      <NavigationItem>En Español</NavigationItem>
+      <NavigationItem>Locations</NavigationItem>
+      <NavigationItem>Contact Us</NavigationItem>
+      <NavigationItem>Help</NavigationItem>
     </Toolbar>
   </AppBar>
 );

@@ -1,23 +1,29 @@
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import Grid from '@mui/material/Grid';
-import Navigation from './components/Navigation/Navigation.jsx';
-import Sidebar from './components/Sidebar/Sidebar.jsx';
+import Home from './components/Home/Home';
+import Navigation from './components/Navigation/Navigation';
+import SubNavigation from './components/Navigation/SubNavigation';
 
-// This is naively designed for desktop first. Ideally we'd have a more complex
-// structure that shrinks the navigation and sidebar on mobile.
+// TODO: Change design to mobile-first by creating collapsed versions of Navigation
+// and Sidebar.
+// TODO: Add routing for the navigation items and the direct deposit flow.
 const App = () => (
-  <Grid container>
-    <Grid item xs={12}>
-      <Navigation />
-    </Grid>
+  <LocalizationProvider dateAdapter={AdapterDayjs}>
     <Grid container>
-      <Grid item xs={2}>
-        <Sidebar />
+      <Grid item xs={12}>
+        <Navigation />
       </Grid>
-      <Grid item xs={10}>
-
+      <Grid container>
+        <Grid item xs={2}>
+          <SubNavigation />
+        </Grid>
+        <Grid item xs={10}>
+          <Home />
+        </Grid>
       </Grid>
     </Grid>
-  </Grid>
+  </LocalizationProvider>
 );
 
 export default App;
